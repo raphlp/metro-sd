@@ -52,7 +52,7 @@ Nothing here is invented, and where something is approximate the interface says 
 - **Metro legs drawn as straight lines** between stations — it runs underground, so following the road network would be wrong
 - Base map: Esri Light Gray Canvas
 
-The one honest gap: the drawn concho path is the most plausible road route between two points. **The real geometry of those 262 routes does not exist in any public source** — which is precisely the hole this project exists to fill.
+The one honest gap: the drawn concho path is the most plausible road route between two points. **The real geometry of those 189 routes does not exist in any public source** — which is precisely the hole this project exists to fill.
 
 ## Technical notes
 
