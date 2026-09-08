@@ -183,7 +183,8 @@ function buildRoute(key) {
   const price = route.legs.reduce((t, l) =>
     t + (l.type === 'metro' ? (l.price || 0) : l.type === 'concho' ? (rutaById(l.ruta)?.costo || 0) : 0), 0);
 
-  const cur = { key, route, steps, mins, price, dest, geo: 'loading' };
+  const cur = { key, route, steps, mins, price, dest, geo: 'loading',
+                nStations: steps.filter(x => x.kind === 'station').length };
   cur.ready = loadGeo(cur);
   return cur;
 }
@@ -363,8 +364,17 @@ function openRoute(key) {
 
 /* ---------------- écran 3 : trajet en cours ---------------- */
 let liveIdx = 0, liveTimer = null, animId = null, liveSession = 0;
-let doneLine = null, hotLine = null, doneCoords = [];
+let doneLine = null, progLine = null, hotLine = null, doneCoords = [];
 const DUR = { walk: 3200, station: 2100, concho: 3800, off: 1800, flag: 0 };
+const METRO_BUDGET = 11000;   // durée totale visée pour la partie métro, quel que soit le nombre d'arrêts
+
+/* Une ligne de 12 stations ne doit pas prendre 12 × 2,1 s. On répartit un
+   budget fixe entre les arrêts, avec un plancher pour rester lisible. */
+function stepDuration(step) {
+  if (step.kind !== 'station') return DUR[step.kind] ?? 2000;
+  const n = current.nStations || 1;
+  return Math.max(620, Math.min(DUR.station, METRO_BUDGET / n));
+}
 
 let starting = false;
 async function startLive() {
@@ -392,8 +402,10 @@ async function startLive() {
 
   liveLayer.clearLayers();
   doneCoords = [];
-  doneLine = L.polyline([], { color: DONE, weight: 7, opacity: .9, lineCap: 'round', lineJoin: 'round' }).addTo(liveLayer);
+  const doneStyle = { color: DONE, weight: 7, opacity: .9, lineCap: 'round', lineJoin: 'round' };
   hotLine  = L.polyline([], { color: BRAND, weight: 16, opacity: .18, lineCap: 'round', lineJoin: 'round' }).addTo(liveLayer);
+  doneLine = L.polyline([], doneStyle).addTo(liveLayer);   // segments terminés — écrit une fois par étape
+  progLine = L.polyline([], doneStyle).addTo(liveLayer);   // segment en cours — écrit à chaque frame
 
   if (meMarker) map.removeLayer(meMarker);
   meMarker = L.marker(steps[0].coord, {
@@ -428,29 +440,34 @@ function goStep(i, first = false) {
 
   /* le point glisse le long du chemin, proportionnellement à la distance */
   const meta = pathMeta(s.path);
-  const dur = DUR[s.kind] || 2000;
-  const t0 = performance.now();
+  const dur = stepDuration(s);
   const session = liveSession;
+  let t0 = null;                     // calé sur le premier timestamp de rAF,
+                                     // pour ne pas mélanger deux horloges
   const dot = $('#meDot'); if (dot) dot.classList.toggle('walk', s.kind === 'walk' || s.kind === 'off');
   const tick = now => {
     if (session !== liveSession || !meMarker) return;   // boucle périmée (écran quitté, skip, relance)
+    if (t0 === null) t0 = now;
     const t = Math.min(1, (now - t0) / dur);
     const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;    // ease in-out
     const { pt, idx } = pointAt(s.path, meta, e);
     meMarker.setLatLng(pt);
-    doneLine.setLatLngs([...doneCoords, ...s.path.slice(0, idx + 1), pt]);
+    progLine.setLatLngs([...s.path.slice(0, idx + 1), pt]);
     if (t < 1) animId = requestAnimationFrame(tick);
     else {
-      doneCoords = [...doneCoords, ...s.path];
-      liveTimer = setTimeout(() => { if (session === liveSession) goStep(i + 1); }, 350);
+      doneCoords = doneCoords.concat(s.path);
+      doneLine.setLatLngs(doneCoords);        // une seule écriture, en fin d'étape
+      progLine.setLatLngs([]);
+      liveTimer = setTimeout(() => { if (session === liveSession) goStep(i + 1); }, dur < 1000 ? 90 : 320);
     }
   };
   animId = requestAnimationFrame(tick);
 }
 
-function scrollToStep(el) {
+function scrollToStep(el, fast = false) {
   const box = $('#stepsList');
-  box.scrollTo({ top: Math.max(0, el.offsetTop - (box.clientHeight - el.offsetHeight) / 2), behavior: 'smooth' });
+  box.scrollTo({ top: Math.max(0, el.offsetTop - (box.clientHeight - el.offsetHeight) / 2),
+                 behavior: fast ? 'auto' : 'smooth' });
 }
 
 function renderLive(first = false) {
@@ -515,13 +532,15 @@ function renderLive(first = false) {
     node.style.boxShadow = i === liveIdx ? `0 0 0 5px ${color}28` : 'none';
     if (stem) stem.classList.toggle('done', i < liveIdx);
   });
-  requestAnimationFrame(() => { if (els[liveIdx]) scrollToStep(els[liveIdx]); });
+  const fast = stepDuration(s) < 1000;
+  requestAnimationFrame(() => { if (els[liveIdx]) scrollToStep(els[liveIdx], fast); });
 }
 
 function arrive() {
   stopLive();
   $('#alertBand').classList.remove('show');
   hotLine && hotLine.setLatLngs([]);
+  progLine && progLine.setLatLngs([]);
   $('#arrivedTxt').textContent = current.route.label + ' · RD$ ' + current.price + ' en total';
   $('#arrivedCard').classList.add('show');
 }
@@ -550,7 +569,13 @@ function show(id) {
 }
 
 $('#startBtn').onclick = startLive;
-$('#skipBtn').onclick = () => { if (current && liveIdx < current.steps.length - 1) { doneCoords = [...doneCoords, ...(current.steps[liveIdx].path || [])]; goStep(liveIdx + 1); } };
+$('#skipBtn').onclick = () => {
+  if (!current || liveIdx >= current.steps.length - 1) return;
+  doneCoords = doneCoords.concat(current.steps[liveIdx].path || []);
+  doneLine.setLatLngs(doneCoords);
+  progLine.setLatLngs([]);
+  goStep(liveIdx + 1);
+};
 $('#fakeSearch').onclick = () => $('#quickList').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 $$('[data-back]').forEach(b => b.onclick = () => show(b.dataset.back));
 

@@ -79,30 +79,41 @@ body{
 /* ---------- splash ---------- */
 .splash{
   position:absolute;inset:0;z-index:700;background:#fff;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  display:flex;flex-direction:column;
   transition:opacity .45s ease,visibility .45s;
 }
 .splash.hide{opacity:0;visibility:hidden;pointer-events:none}
-.splash-logo{width:190px;height:auto;position:relative;z-index:2;animation:logo-in .6s cubic-bezier(.2,.9,.3,1.2) both}
-@keyframes logo-in{from{transform:scale(.86);opacity:0}}
-/* bandes drapeau, coin inférieur droit */
-.splash-stripes{position:absolute;right:-140px;bottom:-40px;width:520px;height:300px;transform:rotate(-32deg);transform-origin:center;z-index:1}
-.splash-stripes i{position:absolute;left:0;right:0;display:block}
-.splash-stripes i:first-child{top:0;height:96px;background:#002D62}
-.splash-stripes i:last-child{top:150px;height:110px;background:#CE1126}
-/* roue */
-.spinner{
-  position:relative;z-index:2;width:30px;height:30px;border-radius:99px;
-  border:3px solid #E3EDE7;border-top-color:var(--brand);animation:spin .8s linear infinite;
+
+/* bandes drapeau : enfermées dans le coin bas-droit, elles ne peuvent plus
+   traverser le contenu quel que soit le format de l'écran */
+.splash-stripes{position:absolute;left:0;right:0;bottom:0;height:34%;overflow:hidden;z-index:0}
+.splash-stripes i{position:absolute;left:-14%;right:-14%;height:24%;transform:rotate(-15deg)}
+.splash-stripes i:first-child{bottom:30%;background:#002D62}
+.splash-stripes i:last-child{bottom:2%;background:#CE1126}
+
+.splash-main{
+  flex:1;z-index:2;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:32px;padding:0 24px;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
-.splash-by{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:7px}
-.splash-by span{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#A8AEB8}
-.splash-by img{height:30px;width:auto;opacity:.92}
-.splash-note{
-  position:absolute;bottom:34px;left:0;right:0;z-index:2;margin:0;
-  text-align:center;font-size:10.5px;letter-spacing:.4px;color:#8A9099;
+.splash-logo{width:172px;max-width:52%;height:auto;animation:logo-in .6s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes logo-in{from{transform:scale(.88);opacity:0}}
+
+/* barre de progression déterminée, calée sur les 2 s avant le basculement */
+.splash-bar{width:108px;height:3px;border-radius:99px;background:#E7EAEE;overflow:hidden}
+.splash-bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--brand);
+  animation:load 2s cubic-bezier(.25,.6,.3,1) forwards}
+@keyframes load{to{width:100%}}
+
+/* pied opaque : la signature reste lisible même par-dessus les bandes */
+.splash-foot{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  padding:34px 20px calc(30px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.95) 26%,#fff 46%);
 }
+.splash-kicker{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:#8D949E}
+.splash-rl{height:26px;width:auto}
+.splash-note{margin:4px 0 0;font-size:10.5px;letter-spacing:.3px;color:#9AA1AB;text-align:center}
 
 /* ---------- écrans ---------- */
 .screen{position:absolute;inset:0;z-index:400;pointer-events:none;opacity:0;transition:opacity .22s}
