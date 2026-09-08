@@ -37,7 +37,12 @@ addEventListener('load', fitPhone);          // le logo du pied change sa hauteu
 fitPhone();
 
 /* ---------------- carte ---------------- */
-const map = L.map('map', { zoomControl: false, attributionControl: false, zoomSnap: .25 })
+const map = L.map('map', {
+  zoomControl: false, attributionControl: false, zoomSnap: .25,
+  /* le conteneur SVG déborde largement du cadre : Leaflet ne redessine plus
+     les tracés à chaque petit déplacement, seulement aux grands sauts */
+  renderer: L.svg({ padding: .8 })
+})
   .setView([18.492, -69.912], 11.6);
 mapRef = map;
 
@@ -125,6 +130,37 @@ function fitPath(path, opts = {}) {
     paddingTopLeft: [46, 135], paddingBottomRight: [46, sheetH + 36],
     maxZoom: opts.maxZoom ?? 16.5, animate: opts.animate ?? true, duration: .7
   });
+}
+
+/* ---------------- caméra du trajet en cours ----------------
+   Un changement de zoom force Leaflet à recharger les tuiles et à reprojeter
+   tous les tracés — c'est ce qui faisait clignoter la ligne de métro. On fixe
+   donc un zoom par mode de transport, qui ne change qu'aux transitions
+   (marche → métro → concho), et entre deux arrêts on ne fait que translater. */
+const ZOOM = { walk: 15.3, station: 14.2, concho: 12.4, off: 15, flag: 15.3 };
+let camZoom = null;
+
+/* Recentre en tenant compte de la bottom sheet : le point doit tomber au
+   milieu de la bande visible, pas au milieu de la carte. */
+function offsetCenter(coord, z) {
+  const size = map.getSize();
+  const sheet = $('.screen.is-active .sheet');
+  const sheetH = sheet ? sheet.offsetHeight : 0;
+  const topH = 118;
+  const visibleY = topH + (size.y - sheetH - topH) / 2;
+  const p = map.project(coord, z);
+  return map.unproject(L.point(p.x, p.y + size.y / 2 - visibleY), z);
+}
+
+function followTo(coord, kind, first) {
+  const z = ZOOM[kind] ?? 14.5;
+  const c = offsetCenter(coord, z);
+  if (first || camZoom === null || Math.abs(z - camZoom) > .05) {
+    camZoom = z;
+    map.setView(c, z, { animate: !first, duration: .7 });      // transition de mode
+  } else {
+    map.panTo(c, { animate: true, duration: .65 });            // même zoom : simple translation
+  }
 }
 
 /* ---------------- helpers réseau ---------------- */
@@ -413,7 +449,10 @@ async function startLive() {
     </div>`;
   }).join('');
 
+  drawRoute(current, false);   // tracé complet, sans animation : plus aucun
+                               // stroke-dasharray résiduel sur cet écran
   liveLayer.clearLayers();
+  camZoom = null;
   doneCoords = [];
   const doneStyle = { color: DONE, weight: 7, opacity: .9, lineCap: 'round', lineJoin: 'round' };
   hotLine  = L.polyline([], { color: BRAND, weight: 16, opacity: .18, lineCap: 'round', lineJoin: 'round' }).addTo(liveLayer);
@@ -449,7 +488,8 @@ function goStep(i, first = false) {
   /* segment courant en surbrillance + cadrage sur ce segment */
   const color = s.kind === 'station' ? NET[s.line].color : s.kind === 'concho' ? AMBER : WALK;
   hotLine.setLatLngs(s.path); hotLine.setStyle({ color });
-  fitPath(s.path, { maxZoom: s.kind === 'station' ? 15.5 : 16.5, animate: !first });
+  const mid = s.path[Math.floor(s.path.length / 2)] || s.coord;
+  followTo(mid, s.kind, first);
 
   /* le point glisse le long du chemin, proportionnellement à la distance */
   const meta = pathMeta(s.path);
