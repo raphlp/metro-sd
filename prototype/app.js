@@ -345,7 +345,7 @@ function renderHome() {
     </button>`).join('');
   $$('.q-item').forEach(b => b.onclick = () => openRoute(b.dataset.route));
   $('#dataNote').innerHTML =
-    `<b>${RUTAS_STATS.total}</b> rutas de conchos y guaguas cargadas · fuente ${RUTAS_STATS.fuente} (${RUTAS_STATS.actualizado})`;
+    `<b>${RUTAS_STATS.total}</b> rutas urbanas de conchos y guaguas · fuente ${RUTAS_STATS.fuente} (${RUTAS_STATS.actualizado})`;
   routeLayer.clearLayers(); liveLayer.clearLayers();
   /* cadre tout le réseau dans la bande visible au-dessus de la sheet */
   fitPath(Object.values(NET).flatMap(l => l.stations.map(s => [s.lat, s.lon])), { maxZoom: 12.5 });

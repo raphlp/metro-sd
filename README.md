@@ -47,7 +47,7 @@ The middle screen is the point of the whole project. A trip to Los Alcarrizos is
 Nothing here is invented, and where something is approximate the interface says so.
 
 - **39 metro stations** across Lines 1 and 2, with coordinates and ordering pulled from OpenStreetMap `route=subway` relations tagged `operator=OPRET`
-- **262 concho and guagua routes** with fare, operating hours, union and fleet size, converted from INTRANT's official CSV published on [datos.gob.do](https://datos.gob.do)
+- **189 urban concho and guagua routes** with fare, operating hours, union and fleet size, converted from INTRANT's official CSV published on [datos.gob.do](https://datos.gob.do)
 - **Walking and concho legs routed along real streets** via Valhalla on OpenStreetMap data
 - **Metro legs drawn as straight lines** between stations — it runs underground, so following the road network would be wrong
 - Base map: Esri Light Gray Canvas

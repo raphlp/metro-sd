@@ -34,8 +34,13 @@ const rows = table.map(v => Object.fromEntries(cols.map((c, i) => [c, (v[i] ?? '
 const clean = s => s.replace(/\s+/g, ' ').trim();
 const sigla = f => (f.match(/\(([^)]+)\)\s*$/)?.[1] || f).replace(/,?\s*SRL.*$/i, '').trim();
 
+/* On ne garde que les rutas URBAINES : les 70 lignes « Interurbano » sont des
+   compagnies de cars longue distance (Caribe Tours vers Santiago, Barahona, la
+   frontière haïtienne). Leur colonne « ruta » contient un nom d'entreprise, pas
+   un code de ligne — elles n'ont rien à faire dans un planificateur urbain. */
 const rutas = rows
-  .filter(r => r.ruta && r.ruta !== 'N/A')
+  .filter(r => r.ruta && r.ruta !== 'N/A' && r.licencia === 'Urbano')
+  .filter(r => !/inactiva/i.test(r.ruta))          // lignes déclarées hors service
   .map(r => ({
     id: r.ruta,
     tipo: r.tipo,
@@ -54,6 +59,7 @@ const stats = {
   total: rutas.length,
   veh: rutas.reduce((t, r) => t + r.veh, 0),
   porTipo: rutas.reduce((o, r) => (o[r.tipo] = (o[r.tipo] || 0) + 1, o), {}),
+  alcance: 'rutas urbanas del Gran Santo Domingo',
   fuente: 'INTRANT · datos.gob.do',
   actualizado: rutas.map(r => r.upd).sort().pop()
 };
