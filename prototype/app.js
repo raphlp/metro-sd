@@ -24,11 +24,16 @@ setTimeout(() => $('#splash').classList.add('hide'), 2000);
 let mapRef = null;                       // renseigné après la création de la carte
 function fitPhone() {
   if (innerWidth <= 430) { document.documentElement.style.setProperty('--s', 1); return; }
-  const s = Math.min(1, (innerHeight - 64) / 844, (innerWidth - 32) / 390);
-  document.documentElement.style.setProperty('--s', s.toFixed(3));
+  /* la hauteur du pied varie avec le logo et le nombre de lignes : on la mesure
+     plutôt que de la deviner, sinon le téléphone déborde en haut de l'écran */
+  const foot = document.querySelector('.stage-foot');
+  const chrome = (foot ? foot.offsetHeight : 0) + 68;      // pied + marges + anneau du châssis
+  const s = Math.min(1, (innerHeight - chrome) / 844, (innerWidth - 32) / 390);
+  document.documentElement.style.setProperty('--s', Math.max(.35, s).toFixed(3));
   if (mapRef) mapRef.invalidateSize();
 }
 addEventListener('resize', fitPhone);
+addEventListener('load', fitPhone);          // le logo du pied change sa hauteur
 fitPhone();
 
 /* ---------------- carte ---------------- */
@@ -243,6 +248,14 @@ function drawAnimated(latlngs, opts, delay, dur, animate) {
     path.style.strokeDashoffset = len;
     path.style.transition = `stroke-dashoffset ${dur}ms cubic-bezier(.3,.8,.3,1) ${delay}ms`;
     requestAnimationFrame(() => { path.style.strokeDashoffset = 0; });
+    /* La longueur est mesurée au zoom courant. Si on la laisse, tout changement
+       de zoom rallonge le tracé sans rallonger le tiret : la ligne se coupe.
+       On repasse en trait plein dès l'animation terminée. */
+    setTimeout(() => {
+      path.style.transition = '';
+      path.style.strokeDasharray = 'none';
+      path.style.strokeDashoffset = '0';
+    }, delay + dur + 60);
   }
   return pl;
 }
