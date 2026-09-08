@@ -9,6 +9,7 @@
   --ink:#12151C;
   --muted:#6E7683;
   --line:#E7E1D6;
+  --rl:#4CE6B9;        /* accent RLCore */
   --font:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
   --s:1;               /* escala del teléfono, calculada en JS */
 }
@@ -23,8 +24,17 @@ body{
   padding:0 16px;overflow:hidden;
 }
 
-.stage{display:flex;flex-direction:column;align-items:center;gap:12px}
-.caption{color:#8a8f9c;font-size:12px;margin:0;text-align:center;max-width:520px;line-height:1.5}
+.stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+
+/* ---------- signature RLCore ---------- */
+.stage-foot{display:flex;flex-direction:column;align-items:center;gap:7px;max-width:540px;text-align:center}
+.rl-brand{display:block;opacity:.92;transition:opacity .2s}
+.rl-brand:hover{opacity:1}
+.rl-brand img{height:26px;width:auto;display:block}
+.rl-tag{margin:0;font-size:12px;color:#9aa1b0;letter-spacing:.2px}
+.rl-tag::before{content:'';display:inline-block;width:5px;height:5px;border-radius:99px;background:var(--rl);margin-right:7px;vertical-align:2px}
+.rl-copy{margin:2px 0 0;font-size:10.5px;color:#5d6470;letter-spacing:.3px}
+.caption{color:#79808d;font-size:11px;margin:0;text-align:center;max-width:520px;line-height:1.55}
 .caption b{color:#c3c8d4;font-weight:600}
 
 /* ---------- châssis téléphone (390×844 mis à l'échelle, jamais déformé) ---------- */
@@ -46,7 +56,7 @@ body{
   .phone-wrap{width:100vw;height:100dvh}
   .phone{width:100vw;height:100dvh;transform:none;border-radius:0;box-shadow:none}
   .phone::before{display:none}
-  .caption{display:none}
+  .stage-foot{display:none}
 }
 
 /* ---------- carte ---------- */
@@ -86,6 +96,9 @@ body{
   border:3px solid #E3EDE7;border-top-color:var(--brand);animation:spin .8s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
+.splash-by{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:7px}
+.splash-by span{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#A8AEB8}
+.splash-by img{height:30px;width:auto;opacity:.92}
 .splash-note{
   position:absolute;bottom:34px;left:0;right:0;z-index:2;margin:0;
   text-align:center;font-size:10.5px;letter-spacing:.4px;color:#8A9099;
