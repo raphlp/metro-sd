@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Metro SD — prototipo no oficial</title>
+<meta name="description" content="Prototipo independiente de planificador de trayectos para el Gran Santo Domingo: metro, teleférico y rutas de conchos. No es una aplicación oficial del Metro de Santo Domingo ni de OPRET." />
+<meta name="robots" content="noindex" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Metro SD — prototipo no oficial" />
+<meta property="og:description" content="Maqueta de planificador de trayectos multimodal para el Gran Santo Domingo. Metro y teleférico + 262 rutas de conchos y guaguas (datos INTRANT). Proyecto independiente, sin relación con OPRET." />
+<meta property="og:locale" content="es_DO" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23008048'/%3E%3Cpath d='M18 46V22l14 16 14-16v24' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="stage">
+  <div class="phone-wrap">
+  <div class="phone">
+    <div id="map"></div>
+    <div class="map-fade"></div>
+
+    <!-- barre de statut factice -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">●●● ▮</span>
+    </div>
+
+    <!-- ============ SPLASH ============ -->
+    <div class="splash" id="splash">
+      <div class="splash-stripes" aria-hidden="true"><i></i><i></i></div>
+      <img src="assets/logo.png" alt="" class="splash-logo" />
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="splash-note">Prototipo independiente · sin relación con OPRET</p>
+    </div>
+
+    <!-- ============ ÉCRAN 1 : ACCUEIL ============ -->
+    <section class="screen is-active" id="screen-home">
+      <div class="brand-pill">
+        <img src="assets/logo.png" alt="Metro de Santo Domingo" />
+        <div><b>Metro SD</b><span>prototipo · no oficial</span></div>
+      </div>
+
+      <div class="sheet sheet-home">
+        <div class="grabber"></div>
+        <h1 class="hi">¿A dónde vas?</h1>
+        <div class="searchbar" id="fakeSearch">
+          <span class="mag">⌕</span>
+          <span class="ph">Buscar destino, estación, barrio…</span>
+        </div>
+        <div class="from-row">
+          <span class="dot-here"></span>
+          <span>Desde <b id="originName">Naco</b></span>
+        </div>
+
+        <div class="quick-label">Sugerencias</div>
+        <div class="quick" id="quickList"></div>
+
+        <div class="lines-legend">
+          <span><i style="background:#0072CE"></i>L1</span>
+          <span><i style="background:#C8102E"></i>L2</span>
+          <span><i style="background:#008048"></i>Teleférico</span>
+          <span><i style="background:#F2A413"></i>Concho</span>
+        </div>
+        <p class="data-note" id="dataNote"></p>
+      </div>
+    </section>
+
+    <!-- ============ ÉCRAN 2 : ITINÉRAIRE ============ -->
+    <section class="screen" id="screen-route">
+      <header class="topbar">
+        <button class="icon-btn" data-back="home">‹</button>
+        <img src="assets/logo.png" alt="" class="topbar-logo" />
+        <div class="topbar-txt">
+          <b id="routeTitle">Destino</b>
+          <span id="routeSub">desde Naco</span>
+        </div>
+      </header>
+      <div class="geo-note" id="geoNote"></div>
+
+      <div class="sheet sheet-route">
+        <div class="grabber"></div>
+        <div class="route-head">
+          <div>
+            <div class="big-time" id="routeTime">— min</div>
+            <div class="route-meta" id="routeMeta">llegada · —</div>
+          </div>
+          <div class="price-pill" id="routePrice">RD$ —</div>
+        </div>
+
+        <div class="legs" id="legsList"></div>
+
+        <button class="cta" id="startBtn">Iniciar viaje</button>
+      </div>
+    </section>
+
+    <!-- ============ ÉCRAN 3 : EN ROUTE ============ -->
+    <section class="screen" id="screen-live">
+      <header class="topbar live-top" id="liveTop">
+        <button class="icon-btn" data-back="route">‹</button>
+        <div class="line-chip" id="liveLine">L1</div>
+        <div class="topbar-txt">
+          <span class="live-kicker" id="liveKicker">Próxima parada</span>
+          <b id="liveNext">—</b>
+        </div>
+        <button class="icon-btn skip" id="skipBtn" title="Siguiente">⏭</button>
+      </header>
+
+      <div class="alert-band" id="alertBand">Prepárate para bajar</div>
+
+      <div class="sheet sheet-live">
+        <div class="grabber"></div>
+        <div class="live-head">
+          <div class="live-progress">
+            <div class="lp-bar"><i id="lpFill"></i></div>
+            <div class="lp-txt"><span id="liveRemain">—</span><span id="liveEta">—</span></div>
+          </div>
+        </div>
+        <div class="steps" id="stepsList"></div>
+      </div>
+
+      <div class="arrived" id="arrivedCard">
+        <img src="assets/logo.png" alt="" class="ar-logo" />
+        <b>Has llegado</b>
+        <span id="arrivedTxt">—</span>
+        <button class="cta ghost" data-back="home">Volver al inicio</button>
+      </div>
+    </section>
+  </div>
+  </div>
+
+  <p class="caption">
+    <b>Prototipo independiente, sin relación con OPRET ni con el Metro de Santo Domingo.</b><br/>
+    Estaciones y calles: OpenStreetMap · rutas de conchos: INTRANT (datos.gob.do) · trazado a pie: Valhalla
+  </p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="rutas.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

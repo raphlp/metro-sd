@@ -1,0 +1,1635 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-07T17:49:06Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "relation",
+  "id": 1325782,
+  "members": [
+    {
+      "type": "node",
+      "ref": 12640548216,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640538688,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640873974,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640873973,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640873972,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640720540,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640722123,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640722124,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640721531,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640721534,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640845085,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640845087,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640845091,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640845097,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640845098,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12640873607,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 1364972793,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364992102,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364992099,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364992100,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "blue",
+    "name": "Línea 1: Mamá Tingó → Centro de los Héroes",
+    "network": "Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport:version": "2",
+    "ref": "1",
+    "route": "subway",
+    "type": "route",
+    "wikidata": "Q133887574"
+  }
+},
+{
+  "type": "relation",
+  "id": 7730098,
+  "members": [
+    {
+      "type": "node",
+      "ref": 12638915293,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638997083,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638857544,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638855053,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638676675,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324956457,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4119545007,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4119588390,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4119588420,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5226305553,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324955715,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 309520913,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5226305563,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324959619,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324959692,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324962072,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 5228521725,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324963155,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324963154,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 3723270045,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 3723270046,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 3723289990,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 3723255425,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 1364754559,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754562,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754560,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754561,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 223614049,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 368471378,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1365337872,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 631180845,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 631180844,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "red",
+    "from": "Pablo Adón Guzmán",
+    "name": "Línea 2: Pablo Adón Guzmán → Concepción Bona",
+    "network": "Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport:version": "2",
+    "ref": "2",
+    "route": "subway",
+    "to": "Concepción Bona",
+    "type": "route",
+    "wikidata": "Q25421356"
+  }
+},
+{
+  "type": "relation",
+  "id": 7734058,
+  "members": [
+    {
+      "type": "node",
+      "ref": 12643605351,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643605345,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643605344,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643605340,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535866,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535864,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535863,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535861,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535855,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12643535848,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642958813,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642958811,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642958809,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642958802,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642932098,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642932096,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12642932095,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638649784,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638676682,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638855056,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638857539,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638997090,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 12638915300,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 1365337870,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1365337871,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1365337873,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754558,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1365264168,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754556,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754557,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364754555,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "red",
+    "from": "Concepción Bona",
+    "name": "Línea 2: Concepción Bona → Pablo Adón Guzmán",
+    "network": "Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport:version": "2",
+    "ref": "2",
+    "route": "subway",
+    "to": "Pablo Adón Guzmán",
+    "type": "route",
+    "wikidata": "Q25421356"
+  }
+},
+{
+  "type": "relation",
+  "id": 7734059,
+  "members": [
+    {
+      "type": "node",
+      "ref": 2382875701,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2382875707,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2382433212,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2382356033,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2382351269,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2382351268,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2324959085,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 312855286,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 312855983,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 312855599,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2104800000,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2385996177,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2385996813,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 2104800239,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4042570077,
+      "role": "stop"
+    },
+    {
+      "type": "node",
+      "ref": 4114501360,
+      "role": "stop"
+    },
+    {
+      "type": "way",
+      "ref": 200503467,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364992101,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 230071782,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 1364992096,
+      "role": ""
+    },
+    {
+      "type": "way",
+      "ref": 200503498,
+      "role": ""
+    }
+  ],
+  "tags": {
+    "colour": "blue",
+    "name": "Línea 1: Centro de los Héroes → Mamá Tingó",
+    "network": "Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport:version": "2",
+    "ref": "1",
+    "route": "subway",
+    "type": "route",
+    "wikidata": "Q133887574"
+  }
+},
+{
+  "type": "node",
+  "id": 309520913,
+  "lat": 18.4819202,
+  "lon": -69.9204739,
+  "tags": {
+    "name": "Juan Ulises García Saleta",
+    "network": "OPRET",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 312855286,
+  "lat": 18.4857974,
+  "lon": -69.9144891,
+  "tags": {
+    "name": "Manuel Arturo Peña Batlle",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 312855599,
+  "lat": 18.4999857,
+  "lon": -69.9154340,
+  "tags": {
+    "name": "Los Taínos",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 312855983,
+  "lat": 18.4938640,
+  "lon": -69.9150310,
+  "tags": {
+    "name": "Pedro Livio Cedeño",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2104800000,
+  "lat": 18.5077838,
+  "lon": -69.9158035,
+  "tags": {
+    "name": "Máximo Gómez",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2104800239,
+  "lat": 18.5294468,
+  "lon": -69.9084938,
+  "tags": {
+    "name": "Gregorio Luperón",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324955715,
+  "lat": 18.4825359,
+  "lon": -69.9308400,
+  "tags": {
+    "name": "Freddy Beras-Goico",
+    "network": "OPRET",
+    "operator": "Metro L2",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324956457,
+  "lat": 18.4786765,
+  "lon": -69.9681860,
+  "tags": {
+    "name": "María Montez",
+    "network": "OPRET",
+    "operator": "Metro L2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324959085,
+  "lat": 18.4816251,
+  "lon": -69.9143443,
+  "tags": {
+    "name": "Juan Pablo Duarte",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324959619,
+  "lat": 18.4817797,
+  "lon": -69.9068264,
+  "tags": {
+    "addr:city": "Santo Domingo",
+    "addr:postcode": "10203",
+    "addr:street": "Avenida San Martín",
+    "name": "Coronel Rafael Tomás Fernández Domínguez",
+    "network": "OPRET",
+    "operator": "L2",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324959692,
+  "lat": 18.4876203,
+  "lon": -69.9045748,
+  "tags": {
+    "name": "Mauricio Báez",
+    "network": "OPRET",
+    "operator": "L2",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324962072,
+  "lat": 18.4928969,
+  "lon": -69.8992184,
+  "tags": {
+    "name": "Ramón Cáceres",
+    "network": "OPRET",
+    "operator": "L2",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324963154,
+  "lat": 18.5043538,
+  "lon": -69.8839340,
+  "tags": {
+    "name": "Eduardo Brito",
+    "network": "OPRET",
+    "operator": "Opret",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "20",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2324963155,
+  "lat": 18.4997397,
+  "lon": -69.8898855,
+  "tags": {
+    "name": "Manuel de Jesús Galván",
+    "network": "OPRET",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382351268,
+  "lat": 18.4766878,
+  "lon": -69.9137655,
+  "tags": {
+    "name": "Profesor Juan Bosch",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382351269,
+  "lat": 18.4712307,
+  "lon": -69.9120423,
+  "tags": {
+    "name": "Casandra Damirón",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382356033,
+  "lat": 18.4645968,
+  "lon": -69.9098952,
+  "tags": {
+    "name": "Joaquín Balaguer",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382433212,
+  "lat": 18.4591590,
+  "lon": -69.9163144,
+  "tags": {
+    "name": "Amín Abel Hasbún",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382875701,
+  "lat": 18.4508628,
+  "lon": -69.9274422,
+  "tags": {
+    "name": "Centro de los Héroes",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2382875707,
+  "lat": 18.4555242,
+  "lon": -69.9240265,
+  "tags": {
+    "name": "Francisco Alberto Caamaño Deñó",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2385996177,
+  "lat": 18.5179148,
+  "lon": -69.9150048,
+  "tags": {
+    "name": "Hermanas Mirabal",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2385996813,
+  "lat": 18.5253435,
+  "lon": -69.9162307,
+  "tags": {
+    "name": "José Francisco Peña Gómez",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3723255425,
+  "lat": 18.5052385,
+  "lon": -69.8577481,
+  "tags": {
+    "addr:city": "Santo Domingo Este",
+    "addr:street": "San Vicente de Paúl",
+    "internet_access": "no",
+    "name": "Concepción Bona",
+    "network": "Linea 2B",
+    "operator": "Opret",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "24",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3723270045,
+  "lat": 18.5098601,
+  "lon": -69.8760570,
+  "tags": {
+    "addr:city": "Santo Domingo Este",
+    "addr:street": "Avenida Venezuela",
+    "name": "Ercilia Pepín",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3723270046,
+  "lat": 18.5101226,
+  "lon": -69.8695403,
+  "tags": {
+    "name": "Rosa Duarte",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3723289990,
+  "lat": 18.5098867,
+  "lon": -69.8634209,
+  "tags": {
+    "name": "Trina de Moya de Vásquez",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4042570077,
+  "lat": 18.5403807,
+  "lon": -69.9043309,
+  "tags": {
+    "name": "Gregorio Urbano Gilbert",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4114501360,
+  "lat": 18.5470172,
+  "lon": -69.9011025,
+  "tags": {
+    "name": "Mamá Tingó",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4119545007,
+  "lat": 18.4798108,
+  "lon": -69.9620025,
+  "tags": {
+    "name": "Pedro Francisco Bonó",
+    "network": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4119588390,
+  "lat": 18.4814394,
+  "lon": -69.9544730,
+  "tags": {
+    "name": "Francisco Gregorio Billini",
+    "network": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4119588420,
+  "lat": 18.4819883,
+  "lon": -69.9465645,
+  "tags": {
+    "name": "Ulises Francisco Espaillat",
+    "network": "OPRET",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5226305553,
+  "lat": 18.4837171,
+  "lon": -69.9407609,
+  "tags": {
+    "name": "Pedro Mir",
+    "network": "OPRET",
+    "platforms": "2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5226305563,
+  "lat": 18.4814508,
+  "lon": -69.9145495,
+  "tags": {
+    "name": "Juan Pablo Duarte",
+    "network": "OPRET",
+    "platforms": "4",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5228521725,
+  "lat": 18.4957158,
+  "lon": -69.8961606,
+  "tags": {
+    "name": "Horacio Vásquez",
+    "network": "OPRET",
+    "operator": "Metro L2",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638649784,
+  "lat": 18.4787365,
+  "lon": -69.9681939,
+  "tags": {
+    "name": "María Montez",
+    "network": "OPRET",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638676675,
+  "lat": 18.4857492,
+  "lon": -69.9781849,
+  "tags": {
+    "name": "Pedro Martínez",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "station": "subway",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638676682,
+  "lat": 18.4857868,
+  "lon": -69.9781379,
+  "tags": {
+    "name": "Pedro Martínez",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "station": "subway",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638855053,
+  "lat": 18.4964474,
+  "lon": -69.9910748,
+  "tags": {
+    "name": "Franklin Mieses Burgos",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638855056,
+  "lat": 18.4964808,
+  "lon": -69.9910459,
+  "tags": {
+    "name": "Franklin Mieses Burgos",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638857539,
+  "lat": 18.5026473,
+  "lon": -69.9993697,
+  "tags": {
+    "name": "27 de Febrero",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638857544,
+  "lat": 18.5026086,
+  "lon": -69.9994089,
+  "tags": {
+    "name": "27 de Febrero",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638915293,
+  "lat": 18.5196425,
+  "lon": -70.0104119,
+  "tags": {
+    "name": "Pablo Adón Guzmán",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638915300,
+  "lat": 18.5196533,
+  "lon": -70.0103522,
+  "tags": {
+    "name": "Pablo Adón Guzmán",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638997083,
+  "lat": 18.5104575,
+  "lon": -70.0082780,
+  "tags": {
+    "name": "Freddy Gatón Arce",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12638997090,
+  "lat": 18.5104804,
+  "lon": -70.0082322,
+  "tags": {
+    "name": "Freddy Gatón Arce",
+    "opening_date": "2025-12",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640538688,
+  "lat": 18.5396132,
+  "lon": -69.9046092,
+  "tags": {
+    "name": "Gregorio Urbano Gilbert",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640548216,
+  "lat": 18.5463461,
+  "lon": -69.9008249,
+  "tags": {
+    "name": "Mamá Tingó",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640720540,
+  "lat": 18.5073615,
+  "lon": -69.9158952,
+  "tags": {
+    "name": "Máximo Gómez",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640721531,
+  "lat": 18.4857904,
+  "lon": -69.9145612,
+  "tags": {
+    "name": "Manuel Arturo Peña Batlle",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640721534,
+  "lat": 18.4816248,
+  "lon": -69.9144257,
+  "tags": {
+    "name": "Juan Pablo Duarte",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640722123,
+  "lat": 18.4999830,
+  "lon": -69.9155053,
+  "tags": {
+    "name": "Los Taínos",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640722124,
+  "lat": 18.4938566,
+  "lon": -69.9151043,
+  "tags": {
+    "name": "Pedro Livio Cedeño",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640845085,
+  "lat": 18.4766769,
+  "lon": -69.9138604,
+  "tags": {
+    "name": "Profesor Juan Bosch",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640845087,
+  "lat": 18.4712098,
+  "lon": -69.9121545,
+  "tags": {
+    "name": "Casandra Damirón",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640845091,
+  "lat": 18.4645545,
+  "lon": -69.9099873,
+  "tags": {
+    "name": "Joaquín Balaguer",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640845097,
+  "lat": 18.4592315,
+  "lon": -69.9163495,
+  "tags": {
+    "name": "Amín Abel Hasbún",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640845098,
+  "lat": 18.4555818,
+  "lon": -69.9240554,
+  "tags": {
+    "name": "Francisco Alberto Caamaño Deñó",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640873607,
+  "lat": 18.4508329,
+  "lon": -69.9274994,
+  "tags": {
+    "name": "Centro de los Héroes",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640873972,
+  "lat": 18.5179164,
+  "lon": -69.9150445,
+  "tags": {
+    "name": "Hermanas Mirabal",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640873973,
+  "lat": 18.5253592,
+  "lon": -69.9162674,
+  "tags": {
+    "name": "José Francisco Peña Gómez",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12640873974,
+  "lat": 18.5295906,
+  "lon": -69.9084130,
+  "tags": {
+    "name": "Gregorio Luperón",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642932095,
+  "lat": 18.4798686,
+  "lon": -69.9620160,
+  "tags": {
+    "name": "Pedro Francisco Bonó",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642932096,
+  "lat": 18.4814909,
+  "lon": -69.9544857,
+  "tags": {
+    "name": "Francisco Gregorio Billini",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642932098,
+  "lat": 18.4820455,
+  "lon": -69.9465691,
+  "tags": {
+    "name": "Ulises Francisco Espaillat",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642958802,
+  "lat": 18.4837690,
+  "lon": -69.9407849,
+  "tags": {
+    "name": "Pedro Mir",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642958809,
+  "lat": 18.4826001,
+  "lon": -69.9308340,
+  "tags": {
+    "name": "Freddy Beras Goico",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642958811,
+  "lat": 18.4819755,
+  "lon": -69.9204699,
+  "tags": {
+    "name": "Juan Ulises García Saleta",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12642958813,
+  "lat": 18.4815215,
+  "lon": -69.9145462,
+  "tags": {
+    "name": "Juan Pablo Duarte",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535848,
+  "lat": 18.4818519,
+  "lon": -69.9068473,
+  "tags": {
+    "name": "Coronel Rafael Tomás Fernández Domínguez",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535855,
+  "lat": 18.4876199,
+  "lon": -69.9046492,
+  "tags": {
+    "name": "Mauricio Báez",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535861,
+  "lat": 18.4929594,
+  "lon": -69.8992566,
+  "tags": {
+    "name": "Ramón Cáceres",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535863,
+  "lat": 18.4957670,
+  "lon": -69.8961922,
+  "tags": {
+    "name": "Horacio Vásquez",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535864,
+  "lat": 18.4997897,
+  "lon": -69.8899145,
+  "tags": {
+    "name": "Manuel de Jesús Galván",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643535866,
+  "lat": 18.5044031,
+  "lon": -69.8839721,
+  "tags": {
+    "name": "Eduardo Brito",
+    "network": "Línea 2 - Metro de Santo Domingo",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643605340,
+  "lat": 18.5099035,
+  "lon": -69.8760882,
+  "tags": {
+    "addr:city": "Santo Domingo Este",
+    "addr:street": "Avenida Venezuela",
+    "name": "Ercilia Pepín",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643605344,
+  "lat": 18.5101776,
+  "lon": -69.8695369,
+  "tags": {
+    "name": "Rosa Duarte",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643605345,
+  "lat": 18.5099347,
+  "lon": -69.8634147,
+  "tags": {
+    "name": "Trina de Moya de Vásquez",
+    "operator": "OPRET",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "subway": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12643605351,
+  "lat": 18.5052648,
+  "lon": -69.8577003,
+  "tags": {
+    "addr:city": "Santo Domingo Este",
+    "addr:street": "San Vicente de Paúl",
+    "internet_access": "no",
+    "name": "Concepción Bona",
+    "network": "Linea 2B",
+    "operator": "Opret",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "24",
+    "station": "subway",
+    "subway": "yes"
+  }
+}
+
+  ]
+}
